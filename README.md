@@ -6,3 +6,8 @@
  4. Also you should have your own mongoDB, write link to it you can in folder `server/config` file `default.json`, `mongoURI`
  
 ## Good luck! :) ##
+
+
+**in plans**
+Add formik and yup, add more features, deploy
+Link you'll find here!
