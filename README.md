@@ -9,5 +9,5 @@
 
 
 > **in plans**
->> Add formik and yup, add more features, deploy
->>Link you'll find here!
+>> Add formik and yup, add more features, deploy.
+>>>Link you'll find here!
