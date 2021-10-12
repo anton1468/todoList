@@ -7,4 +7,3 @@
 3. `yarn` and `yarn web`  
 4. Connect your phone to same wifi as your PC.
 5. Scan QR-code in the bottom of opened window.
-6. Start development.
