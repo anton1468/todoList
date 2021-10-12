@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://anton1468:1234qwerty@cluster0.ork8i.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "anton",
+  "jwtExpiration": 360000
+}
