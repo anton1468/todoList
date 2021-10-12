@@ -19,6 +19,7 @@
     "formik": "^2.2.9",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-icons": "^4.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-check-box": "^2.1.7",
     "react-native-toast-notifications": "^3.2.2",

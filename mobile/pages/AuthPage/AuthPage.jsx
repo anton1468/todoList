@@ -9,6 +9,8 @@ import { useHttp } from "./../../hooks/http.hook";
 import { useToast } from 'react-native-toast-notifications';
 import { Formik } from 'formik';
 import validation from './../../validation/validation';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+
 const AuthPage = () => {
   const toast = useToast();
   const auth = useContext(AuthContext);
@@ -16,6 +18,7 @@ const AuthPage = () => {
   const [mail, setMail] = useState({ email: '' });
   const [password, setPassword] = useState({ password: '' });
   const [register, setRegister] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
   const addMail = (event) => {
     setMail({ email: event.target.value });
   };
@@ -52,6 +55,9 @@ const AuthPage = () => {
   const changeLogin = () => {
     setRegister(false);
   };
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <View>
       <TextInput style={styles.textInput}
@@ -61,13 +67,13 @@ const AuthPage = () => {
         onChange={addMail}
       />
       <TextInput style={styles.textInput}
-        type="text"
-        id="password"
+        id="userPassword" type="password"
         placeholder="Password"
+        secureTextEntry={showPassword}
         onChange={addPassword}
       />
       {register ? <TextInput style={styles.textInput}
-        type="text"
+        type="password"
         id="password"
         placeholder="Confirm password"
       /> : null}
@@ -88,6 +94,15 @@ const AuthPage = () => {
       <View>
         <Text onPress={changeLogin}>Login</Text>
         <Text onPress={changeRegister}>Register</Text>
+        {showPassword ? (
+        <Text style={styles.passwordEye} onPress={handleShowPassword} >
+          <AiFillEyeInvisible />
+          </Text>
+          ) : (
+          <Text style={styles.passwordEye} onPress={handleShowPassword} >
+          <AiFillEye />
+          </Text>
+          )}
       </View>
     </View>
   );
@@ -95,11 +110,18 @@ const AuthPage = () => {
 
 export default AuthPage;
 const styles = StyleSheet.create({
+  passwordEye: {
+    fontSize: 20,
+    position: 'relative',
+    bottom: 126,
+    left: 270,
+  },
   wrapper: {
     padding: 10,
   },
   textInput: {
     height: 50,
+    width: 300,
     padding: 10,
     backgroundColor: 'white',
     borderColor: '#3949ab',
